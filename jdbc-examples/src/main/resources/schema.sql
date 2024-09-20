@@ -16,3 +16,5 @@ create table if not exists `address`
 
     index (user_id)
 );
+
+EXPLAIN select * from address;
