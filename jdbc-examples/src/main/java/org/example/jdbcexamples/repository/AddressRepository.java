@@ -4,6 +4,7 @@ import org.example.jdbcexamples.dox.Address;
 import org.example.jdbcexamples.dto.AddressUser;
 import org.example.jdbcexamples.dto.AddressUser2;
 import org.example.jdbcexamples.mapper.AddressUser2RowMapper;
+import org.example.jdbcexamples.mapper.AdressUserRowMapper;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -14,10 +15,10 @@ import java.util.List;
 @Repository
 public interface AddressRepository extends CrudRepository<Address, String> {
 
-    @Query("""
-            select * from address a 
-            where a.user_id = :userId
-            """)
+//    @Query("""
+//            select * from address a
+//            where a.user_id = :userId
+//            """)
     List<Address> findByUserId(String userId);
 
     @Modifying
@@ -38,12 +39,8 @@ public interface AddressRepository extends CrudRepository<Address, String> {
             """)
     void updateDetailUser(String detail, String id);
 
-    @Query("""
-            select a.id as id, a.detail as detail, u.name as name, a.create_time as create_time,
-            a.update_time as update_time, a.user_id as user_id
-            from address a join user u on u.id = a.user_id
-            where a.id=:aid
-            """)
+    @Query(value = "select * from address a,user u where a.user_id=u.id and a.id=:aid",
+    rowMapperClass = AdressUserRowMapper.class)
     AddressUser findAddressUserById(String aid);
 
     @Query(value = "select * from address a join user u on u.id = a.user_id where a.id=:aid",

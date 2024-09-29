@@ -1,10 +1,12 @@
 package org.example.jdbcexamples.repository;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.jdbcexamples.dox.Address;
 import org.example.jdbcexamples.dox.User;
 import org.example.jdbcexamples.dto.AddressUser;
 import org.example.jdbcexamples.dto.UserAddress;
 import org.example.jdbcexamples.dto.UserAddress3;
+import org.example.jdbcexamples.dto.UserCountDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -60,21 +62,21 @@ class UserRepositoryTest {
     }
 
     @Test
-    void findAddressUser() {
-        AddressUser addreddUser = userRepository.findByAddressId("1057571239761793024");
-        log.debug(addreddUser.toString());
+    void testFindUserAddress() {
+        UserAddress addreddUser = userRepository.findUserAddress("1285832708231036928");
+        for (Address address : addreddUser.getAddresses()) {
+            log.debug("{}", address.toString());
+        }
     }
 
     @Test
-    void findUserAddress() {
-        UserAddress userAddress = userRepository.findUserAddress("1057571239761793024");
-        log.debug("{}", userAddress.getUser());
-        userAddress.getAddresses().forEach(a -> log.debug("{}", a));
+    void testFindUserAddress3() {
     }
 
     @Test
-    void findUserAddress3() {
-        UserAddress3 u = userRepository.findUserAddress3("1057571239761793024");
-        log.debug("{}", u);
+    void findCounts() {
+        for(UserCountDTO count : userRepository.findCounts()){
+            log.debug("{}", count.toString());
+        }
     }
 }
