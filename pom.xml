@@ -11,5 +11,6 @@
 
     <modules>
         <module>jdbc-examples</module>
+        <module>springmvc-examples</module>
     </modules>
 </project>
