@@ -10,10 +10,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class UserSerivce {
+public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -27,6 +29,7 @@ public class UserSerivce {
             throw XException.builder().number(Code.ERROR_CODE).message("用户不存在").build();
         }
         user.setPassword(passwordEncoder.encode(account));
+        userRepository.save(user);
     }
     @Transactional
     public void updateUserPassword(String uid, String password) {
@@ -35,9 +38,14 @@ public class UserSerivce {
             throw XException.builder().number(Code.ERROR_CODE).message("用户不存在").build();
         }
         user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
     }
+    @Transactional
     public void addUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getAccount()));
         userRepository.save(user);
+    }
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

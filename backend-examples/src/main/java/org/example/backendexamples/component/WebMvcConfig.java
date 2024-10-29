@@ -1,4 +1,4 @@
-package org.example.backendexamples.controller;
+package org.example.backendexamples.component;
 
 import lombok.RequiredArgsConstructor;
 import org.example.backendexamples.interceptor.AdminInterceptor;

@@ -10,3 +10,6 @@ logging:
       example: debug
   pattern:
     console: '%-5level %C.%M[%'
+
+my:
+  secretkey: Ggfhf

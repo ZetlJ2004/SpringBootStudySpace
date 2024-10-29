@@ -1,0 +1,12 @@
+POST localhost:8080/api/admin/users
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZThiZiIsInVpZCI6IjEzMDAwMzE2MzQ5NjMxNDA2MDgiLCJpYXQiOjE3MzAwMjI1OTAsImV4cCI6MTczMDEwODk5MH0.QnjgFfar-JGBWjhVNDug9Kh929lStD-SgX33oA_fIaY
+Content-Type:application/json
+
+{
+  "name": "Z",
+  "account": "1234",
+  "role": "dfg1"
+}
+###
+PUT localhost:8080/api/admin/users/admin/password
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZThiZiIsInVpZCI6IjEzMDAwMzE2MzQ5NjMxNDA2MDgiLCJpYXQiOjE3MzAwMjM0NTAsImV4cCI6MTczMDEwOTg1MH0.xYlYB9r7ND3b690XscngVY7k1RTzaUKro-QaM4tWvAo

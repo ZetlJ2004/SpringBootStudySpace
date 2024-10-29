@@ -1,11 +1,11 @@
-package org.example.springmvcexamples.vo;
+package org.example.backendexamples.vo;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.springmvcexamples.exception.Code;
+import org.example.backendexamples.exception.Code;
 
 @Builder
 @Data

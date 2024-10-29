@@ -32,9 +32,18 @@ public class ResultVO {
     }
 
     public static ResultVO error(Code code) {
+
         return ResultVO.builder()
                 .code(code.getNumber())
                 .msg(code.getMessage())
+                .build();
+    }
+
+    public static ResultVO error(int number, String message) {
+
+        return ResultVO.builder()
+                .code(number)
+                .msg(message)
                 .build();
     }
 }

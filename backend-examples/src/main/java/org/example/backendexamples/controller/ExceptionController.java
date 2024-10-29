@@ -1,9 +1,9 @@
-package org.example.springmvcexamples.controller;
+package org.example.backendexamples.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.springmvcexamples.exception.Code;
-import org.example.springmvcexamples.exception.XException;
-import org.example.springmvcexamples.vo.ResultVO;
+import org.example.backendexamples.exception.Code;
+import org.example.backendexamples.exception.XException;
+import org.example.backendexamples.vo.ResultVO;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

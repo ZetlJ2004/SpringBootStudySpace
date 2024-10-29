@@ -1,12 +1,12 @@
-package org.example.springmvcexamples.interceptor;
+package org.example.backendexamples.interceptor;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.example.springmvcexamples.component.JWTComponent;
-import org.example.springmvcexamples.exception.Code;
-import org.example.springmvcexamples.exception.XException;
+import org.example.backendexamples.component.JWTComponent;
+import org.example.backendexamples.exception.Code;
+import org.example.backendexamples.exception.XException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 

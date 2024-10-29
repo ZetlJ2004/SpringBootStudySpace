@@ -1,0 +1,7 @@
+PATCH localhost:8080/api/user/password
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZGZnMSIsInVpZCI6IjEzMDAwMzU5MTkzNjkxNzkxMzYiLCJpYXQiOjE3MzAwMjM0MjUsImV4cCI6MTczMDEwOTgyNX0.jP1sl7LZeUuuOHAfwk_4UhZ_1wdiYlK4XsSs-Ackpco
+Content-Type: application/json
+
+{
+  "password": "1111"
+}
